@@ -16,8 +16,8 @@ RUN bunx tsc --noEmit
 FROM oven/bun:1 AS production
 WORKDIR /app
 
-RUN addgroup --system --gid 1001 appgroup && \
-    adduser --system --uid 1001 --ingroup appgroup appuser
+RUN echo "appuser:x:1001:1001::/app:/bin/sh" >> /etc/passwd && \
+    echo "appgroup:x:1001:" >> /etc/group
 
 COPY --from=build /app/src ./src
 COPY --from=build /app/package.json ./
