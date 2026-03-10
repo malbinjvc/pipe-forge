@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - uses: oven/setup-bun@735343b667d3e6f658f3e0c94e6caaf2c4e5a0d0 # v2.0.2
+      - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
 
